@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h1>Reports</h1>
+		</div>
+	</div>
+	<div class="row">
+		<%= form_tag filter_report_reports_path, remote: true do %>
+			<div class="col-sm-3">
+				<%= select_tag "filter", options_for_select(GlucoseReading::FILTERS_VALUE), class: "form-control col-sm-3 mb-2" %>
+			</div>
+			<div class="col-sm-3">
+				<%= datetime_field_tag "date",nil, class: "form-control mb-2 hide" %>
+			</div>
+			<div class="col-sm-3">
+				<%= submit_tag "Search Report", class: "mb-2" %>
+			</div>
+		<% end %>
+	</div>
+	<div class="row">
+		<div id="display_reports">
+			<%= render 'reports' %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  blood_reading: 1
+  reading_time: 2022-12-19 12:20:01
+  measure_unit: 1
+
+two:
+  blood_reading: 1
+  reading_time: 2022-12-19 12:20:01
+  measure_unit: 1

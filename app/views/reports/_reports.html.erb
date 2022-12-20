@@ -1,0 +1,39 @@
+<br>
+<% if @reports.present? %>
+  <hr>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="col-sm-4">
+        <b>Minimum Level of Reading: </b><%= "#{report_min_value @reports} mg/dl" %>
+      </div>
+      <div class="col-sm-4">
+        <b>Average Level of Reading: </b><%= "#{report_avg_value @reports} mg/dl" %>
+      </div>
+      <div class="col-sm-4">
+        <b>Maximum Level of Reading: </b><%= "#{report_max_value @reports} mg/dl" %>
+      </div>
+    </div>
+  </div>
+  <br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Blood reading</th>
+        <th>Reading time</th>
+        <th>Measure unit</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @reports.each do |report| %>
+        <tr>
+          <td><%= report.blood_reading %></td>
+          <td><%= report.reading_time %></td>
+          <td><%= report.measure_unit %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No Record found</p>
+<% end %>

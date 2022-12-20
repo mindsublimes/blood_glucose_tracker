@@ -1,0 +1,19 @@
+<div class="container">
+  <p>
+    <strong>Blood reading:</strong>
+    <%= @glucose_reading.blood_reading %>
+  </p>
+
+  <p>
+    <strong>Reading time:</strong>
+    <%= @glucose_reading.reading_time %>
+  </p>
+
+  <p>
+    <strong>Measure unit:</strong>
+    <%= "mg/dl" %>
+  </p>
+
+  <%= link_to 'Edit', edit_glucose_reading_path(@glucose_reading) %> |
+  <%= link_to 'Back', glucose_readings_path %>
+</div>

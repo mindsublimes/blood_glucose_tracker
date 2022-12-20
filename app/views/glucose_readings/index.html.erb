@@ -1,0 +1,37 @@
+<div class="container"> 
+  <div class="row">
+    <div class="col-sm-5">
+      <h1>Blood Glucose Readings</h1>
+    </div>
+    <div class="col-sm-7">
+      <div class="float-end mt-2">
+        <%= link_to 'New Glucose Reading', new_glucose_reading_path, class:"btn btn-primary text-white" %>
+      </div>
+    </div>
+  </div>
+
+  <table class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th>Blood reading</th>
+        <th>Reading time</th>
+        <th>Measure unit</th>
+        <th class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @glucose_readings&.each do |glucose_reading| %>
+        <tr>
+          <td><%= glucose_reading.blood_reading %></td>
+          <td><%= glucose_reading.reading_time %></td>
+          <td><%= glucose_reading.measure_unit %></td>
+          <td class="d-flex justify-content-center"><%= link_to 'Show', glucose_reading , class:"btn btn-success btn-sm text-white"%>
+              <%= link_to 'Edit', edit_glucose_reading_path(glucose_reading),class:"btn btn-warning ms-2 btn-sm text-white" %>
+          <%= button_to 'Destroy', glucose_reading, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm ms-2" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+    <br>
+  </div>
+</div>
